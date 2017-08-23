@@ -1,0 +1,43 @@
+<?php
+/* @var $this FW_Queue_Block_Adminhtml_Queue_Edit_Tab_Errors */
+?>
+<div class="entry-edit">
+    <div class="entry-edit-head">
+        <h4 class="icon-head head-customer-view">Errors</h4>
+    </div>
+    <fieldset>
+
+        <div id="queueErrorsGrid">
+            <div class="grid">
+                <div class="hor-scroll">
+                    <table cellspacing="0" class="data" id="queueError_table">
+                        <colgroup>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                        </colgroup>
+                    <thead>
+                    <tr class="headings">
+                        <th class=" no-link"><span class="nobr">Timestamp</span></th>
+                        <th class=" no-link"><span class="nobr">Severity</span></th>
+                        <th class=" no-link"><span>Message</span></th>
+                        <th class=" no-link last"><span class="nobr">Code</span></th>
+                    </tr>
+                    </thead>
+                        <tbody>
+                        <?php $i = 0; foreach($this->getErrors() as $error):?>
+                        <tr title="" class="<?php echo $i++%2 == 0 ? 'even': 'odd'?>">
+                            <td class="a-left" style="width:250px;"><?php echo $error['timestamp']?></td>
+                            <td class="a-center" style="width:150px;"><?php echo $this->getSeverityHtml($error['severity'])?></td>
+                            <td class="a-left"><?php echo $error['message']?></td>
+                            <td class="a-center last"><?php echo $error['code']?></td>
+                        </tr>
+                            <?php endforeach;?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+</div>

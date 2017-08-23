@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout>
+    <adminhtml_fwqueue_list>
+        <reference name="content">
+            <block type="fw_queue/adminhtml_queue" name="fw.queue.list" />
+        </reference>        
+    </adminhtml_fwqueue_list>
+
+    <adminhtml_fwqueue_grid> 
+        <remove name="root" />
+        <reference name="fw.queue.grid">
+            <block type="fw_queue/adminhtml_queue_grid" name="fw.queue.grid" output="toHtml" />
+        </reference>        
+    </adminhtml_fwqueue_grid>
+
+    <adminhtml_fwqueue_edit>
+        <reference name="content">
+            <block type="fw_queue/adminhtml_queue_edit" name="fw.queue.edit" />
+        </reference>
+        <reference name="left">
+            <block type="fw_queue/adminhtml_queue_edit_tabs" name="fw.queue.tabs">
+                <action method="addTab">
+                    <tabid>general_section</tabid>
+                    <tab>fw_queue/adminhtml_queue_edit_tab_general</tab>
+                </action>
+                <action method="addTab">
+                    <tabid>messages_section</tabid>
+                    <tab>fw_queue/adminhtml_queue_edit_tab_messages</tab>
+                </action>
+                <action method="addTab">
+                    <tabid>errors_section</tabid>
+                    <tab>fw_queue/adminhtml_queue_edit_tab_errors</tab>
+                </action>
+            </block>
+        </reference>
+
+    </adminhtml_fwqueue_edit>
+    <adminhtml_fwqueue_process> 
+    </adminhtml_fwqueue_process>
+    <adminhtml_fwqueue_reset> 
+    </adminhtml_fwqueue_reset>
+    <adminhtml_fwqueue_remove> 
+    </adminhtml_fwqueue_remove>
+    
+</layout>

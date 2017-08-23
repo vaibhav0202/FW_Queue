@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <menu>
+        <fw_queue translate="title" module="fw_queue">
+            <title>Queue</title>
+            <sort_order>85</sort_order>
+            <children>
+              <queue translate="title" module="fw_queue">
+                  <title>Manage Queue</title> 
+                  <action>adminhtml/fwqueue/index</action>
+              </queue>
+            </children>
+        </fw_queue>
+    </menu>
+    <acl>
+    	<resources>
+          <admin>
+            <children>
+                <system>
+                    <children>
+                        <config>
+                            <children>
+                                <queue_setting translate="title" module="fw_admin">
+                                    <title>Queue Enable</title>
+                               </queue_setting>
+                            </children>
+                        </config>
+                    </children>
+                </system>
+              <fw_queue>
+		   <title>Queue</title>
+		   <children>
+                     <queue translate="title" module="fw_queue">
+                  	    <title>Manage Queue</title> 
+              	</queue>
+                 </children>
+              </fw_queue>
+            </children>
+          </admin>
+       </resources>
+    </acl>
+</config>

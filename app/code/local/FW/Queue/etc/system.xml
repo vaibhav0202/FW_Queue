@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category    FW
+ * @package     FW_Queue
+ * @copyright   Copyright (c) 2015 F+W Media, Inc. (http://www.fwcommunity.com)
+ */
+-->
+<config>
+    <sections>
+        <queue_setting translate="label" module="fw_admin">
+            <label>Queue Settings</label>
+            <tab>fw_admin</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>1200</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+           <groups>
+                <queue_enable translate="label">
+                    <label>Queue Enable</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>50</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <active translate="label">
+                            <label>Enable</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </active>
+                    </fields>
+                </queue_enable>
+            </groups>
+        </queue_setting>
+    </sections>
+</config>

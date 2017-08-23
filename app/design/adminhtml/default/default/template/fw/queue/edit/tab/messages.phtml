@@ -1,0 +1,36 @@
+<?php
+/* @var $this FW_Queue_Block_Adminhtml_Queue_Edit_Tab_Messages */
+?>
+<div class="entry-edit">
+    <div class="entry-edit-head">
+        <h4 class="icon-head head-customer-view">Messages</h4>
+    </div>
+    <fieldset>
+
+        <div id="queueMessageGrid">
+            <div class="grid">
+                <div class="hor-scroll">
+                    <table cellspacing="0" class="data" id="queueMessage_table">
+                        <colgroup>
+                            <col>
+                            <col>
+                        </colgroup><thead>
+                    <tr class="headings">
+                        <th class=" no-link"><span class="nobr">Timestamp</span></th>
+                        <th class=" no-link last"><span class="nobr">Message</span></th>
+                    </tr>
+                    </thead>
+                        <tbody>
+                        <?php $i = 0; foreach($this->getMessages() as $message):?>
+                        <tr title="" class="<?php echo $i++%2 == 0 ? 'even': 'odd'?>">
+                            <td class=" " style="width:250px;"><?php echo $message['timestamp']?></td>
+                            <td class="a-left last"><?php echo $message['message']?></td>
+                        </tr>
+                        <?php endforeach;?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+</div>
